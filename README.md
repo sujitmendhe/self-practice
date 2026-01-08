@@ -67,3 +67,8 @@ kubectl create namespace google
 ``` bash
 kubectl -n argocd get secret argocd-initial-admin-secret   -o jsonpath="{.data.password}" | base64 -d
 ```
+
+#to get argocd load balancer url
+```bash
+kubectl get svc -n argocd
+```
