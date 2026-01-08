@@ -2,14 +2,14 @@
    sudo su -
 
 # Install kubectl
- curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
-   sudo mv /tmp/eksctl /usr/local/bin
-   eksctl version
+curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
 
   aws configure
-
+``` bash
   aws eks update-kubeconfig --region us-east-1 --name google
-   
+```   
 # for efk stack using ebs volume cluster level need to run add on
 Amazon EBS CSI Driver 
 need to attach role (aws service -- eks -- EKS - Pod Identity{AmazonEBSCSIDriverPolicy})
