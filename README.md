@@ -19,9 +19,13 @@ need to attach role (aws service -- eks -- EKS - Pod Identity{AmazonEBSCSIDriver
 # Install Git
 yum install git -y
 # Install Ingress-Nginx
+``` bash
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
 kubectl get pods -n ingress-nginx
 kubectl get svc -n ingress-nginx
+```
 # Install MariaDB
+``` bash
 sudo yum update -y
 sudo dnf install -y mariadb105
+```
